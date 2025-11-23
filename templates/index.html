@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- <link href="./style.css" rel="stylesheet" /> -->
+  </head>
+  <body class="bg-black">
+    <nav class="">
+      <h1 class="text-center p-4 text-2xl font-bold text-white">
+        Book Recommender Sytem
+      </h1>
+      <ul class="flex justify-evenly p-4 text-white">
+        <li class="text-white"><a href="/">home</a></li>
+        <li class="text-white"><a href="/recommend">Recommend</a></li>
+        <li class="text-white"><a href="/popular_movie">Top50</a></li>
+      </ul>
+    </nav>
+
+    <div class="">
+      <h2 class="text-3xl m-4 font-bold text-white">Top 50 Books</h2>
+    </div>
+    <hr class="border-none bg-white h-1" />
+    <div class="grid grid-cols-4 font-serif">
+      <!-- 1 -->
+
+      {%for i in range(book_name|length)%}
+      <div class="m-4">
+        <div>
+          <img src="{{ image[i] }}" />
+        </div>
+        <h3 class="text-white">{{book_name[i]}}</h3>
+        <p class="text-white">{{author[i]}}</p>
+        <p class="text-white">votes-{{votes[i]}}</p>
+        <p class="text-white">Rating-{{rating[i]}}</p>
+      </div>
+      {%endfor%}
+    </div>
+  </body>
+</html>
